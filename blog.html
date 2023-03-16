@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      tr{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        border: 1px solid gray;
+      }
+
+      td{
+        padding: 5px;
+        border-right: 1px solid gray;
+      }
+      @media screen and (max-width: 576px) {
+        tr{
+          grid-template-columns: repeat(1, 1fr);
+        }
+        
+      }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar section start -->
+    <header class="h-16 flex items-center shadow-sm">
+        <nav class="flex justify-between items-center w-9/12 mx-auto">
+          <div class="text-zinc-800 font-bold uppercase">
+            <h1 class="text-lg">Quiz <span class="text-green-700">HERO</span></h1>
+            <p class="text-[10px] font-normal capitalize -mt-1">
+              Get ready to Quiz and be amazed!
+            </p>
+          </div>
+          <button 
+            class="bg-green-600 font-light text-sm px-5 py-1 rounded text-white"
+          > <a href="index.html">Home</a>
+            
+          </button>
+        </nav>
+      </header>
+    <main class="m-20">
+        <div class="my-10">
+            <h3 class="text-2xl"><span class="text-blue-600 font-bold">Question-1 : </span>Write the differences between map, filter, for Each, find.</h3>
+            <p class="my-5"><span class="text-blue-600 font-bold">Answer: </span><span class="mb-5 mt-10 text-2xl font-bold">.map()</span></p>
+            <p>.map() executes the same code on every element in an array and returns a new array with the updated elements. map() maps an element of an array, performs an operation with it and returns the result in an array. </p>
+            <p>Let's see an example how map() warks. Let's say we have a list of numbers in an array and we want to square each of the array elements.</p>
+            <br>
+            <p class="font-bold">const numbers = [1, 2, 3, 4, 5]</p>
+            <p class="font-bold">const squares = numbers.map( x => x*x)</p>
+            <p class="my-2">The output of this function will be</p>
+            <p class="font-bold">square = [1, 4, 9, 16, 25]</p>
+
+
+            <!-- for Each -->
+            <p class="mb-5 mt-10 text-2xl font-bold">.forEach()</p>
+            <p>.forEach() calls a function for every element in an array and it does not returns anything. .forEach() calls a function for each element, operates on those elements and displays the final elements. It returns only single element. </p>
+            <p>Let's see an example how map() warks. Let's say we have a list of numbers in an array and we want to square each of the array elements.</p>
+            <br>
+            <p class="font-bold">const numbers = [1, 2, 3, 4, 5]</p>
+            <p class="font-bold">const squares = numbers.forEach( x => x*x)</p>
+            <p class="my-2">The output of this function will be</p>
+            <p class="font-bold">square = 1, 4, 9, 16, 25</p>
+
+
+          <!-- filter -->
+            <p class="mb-5 mt-10 text-2xl font-bold">.filter()</p>
+            <p>The filter() method creates a new array with all those elements that fulfil the conditions that are given inside the filter(). It does not execute the function for empty elements. The original array remains the same. It does not change the original array/object.</p>
+            <p>let's see an example how filter() works.  Let's say we have a list of numbers in an array and we want those values only who are greater than 10.</p>
+            <br>
+            <p class="font-bold">const numbers = [1, 5, 10, 15, 3, 7, 20, 32, 1]</p>
+            <p class="font-bold">const newNumbers = numbers.filter( x => x > 10)</p>
+            <p class="my-2">The output of this function will be</p>
+            <p class="font-bold">newNumbers = [15, 20, 32]</p>
+
+
+          <!-- find() -->
+            <p class="mb-5 mt-10 text-2xl font-bold">.find()</p>
+            <p>The find() method the first element that fulfil the conditions that are given inside the find(). It returns a single element. It does not execute the function for empty elements. The original array remains the same. It does not change the original array/object.</p>
+            <p>let's see an example how find() works.  Let's say we have a list of numbers in an array and we want those values only who are greater than 10.</p>
+            <br>
+            <p class="font-bold">const numbers = [1, 5, 10, 15, 3, 7, 20, 32, 1]</p>
+            <p class="font-bold">const newNumber = numbers.find( x => x > 10)</p>
+            <p class="my-2">The output of this function will be</p>
+            <p class="font-bold">newNumber = 15</p>
+        </div>
+        <div class="my-10">
+            <h3 class="text-2xl"><span class="text-blue-600 font-bold">Question-2 : </span>Write the differences between Local Storage, Session Storage and Cookies.</h3>
+            <p><span class="text-blue-600 font-bold text-2xl">Answer: </span></p>
+            <p>Differences between local Storage, session Storage and cookies are given below</p>
+            <br>
+            <table>
+              <tr class="font-bold text-center">
+                <td>Local Storage</td>
+                <td>Session Storage</td>
+                <td>Cookies</td>
+              </tr>
+              <tr>
+                <td>Local storage is useful for storing data that the user will need to access later, such as offline data.</td>
+                <td>Session storage is a great way to improve the performance of your web applications.</td>
+                <td>Cookies are a good choice for storing data that should not be persisted for a long time, such as session IDs.</td>
+              </tr>
+              <tr>
+                <td>This is especially useful for storing data that you want to persist even if the user closes the browser, such as preferences or settings.</td>
+                <td>Session storage is useful for storing data that is sensitive, such as login credentials.</td>
+                <td>Cookies are often used to store data that is not sensitive, such as user preferences</td>
+              </tr>
+              <tr>
+                <td>The stored data is not deleted when the browser is closed.</td>
+                <td>The data is stored only for the session and will be deleted when the browser is closed.</td>
+                <td>The data can be set to expire at a certain time.</td>
+              </tr>
+              <tr>
+                <td>Local Storage is a new feature introduced in HTML5</td>
+                <td>Session Storage is a new feature introduced in HTML5</td>
+                <td>Cookies are the oldest (HTML4) and most wellknown mechanism.</td>
+              </tr>
+              <tr>
+                <td>The data is not sent with the request from the client to the server.</td>
+                <td>The data is not sent with the request from the client to the server.</td>
+                <td>The data is sent with the request from the client to the server.</td>
+              </tr>
+              <tr>
+                <td>It allows 10MB of data to be stored.</td>
+                <td>It allows 5MB of data to be stored.</td>
+                <td>The storage capacity is limited to 4KB of data.</td>
+              </tr>
+              <tr>
+                <td>The data is stored on the browser and system.</td>
+                <td>The data is stored on the browser only.</td>
+                <td>The data is stored on the browser only.</td>
+              </tr>
+            </table>
+        </div>
+        <div class="my-10">
+            <h3 class="text-2xl"><span class="text-blue-600 font-bold">Question-1 : </span>What is Event loop? How it works?</h3>
+            <p><span class="text-blue-600 font-bold text-2xl">Answer: </span></p>
+            <p>The event loop is a constantly running process that monitors both the callback queue and the call stack. It manages asynchronous operations in a program. It is the central component of many event-driven architectures and is commonly used in web browsers, server-side frameworks, and other applications that require non-blocking I/O.</p>
+            <p class="my-2">The event loop works by continuously monitoring a queue of events or tasks, and executing them one by one as they are added to the queue. When an asynchronous operation, such as a network request or a file read, is initiated, the event loop adds a corresponding event or task to the queue and continues to process other events in the meantime. Once the asynchronous operation is complete, the event loop retrieves the corresponding event from the queue and executes any callbacks or handlers associated with that event.</p>
+            <p>Various types of events, including timers, user input, and system events are also handled by the event loop. It ensures that events are processed in a timely and efficient manner, and that the program remains responsive even when multiple events are occurring simultaneously.</p>
+            <p class="my-2">Overall, the event loop is a key component of many modern programming environments, that provides an efficient and scalable mechanism for managing asynchronous operations and enabling the development of highly responsive and efficient software.</p>
+        </div>
+        
+
+    </main>
+</body>
+</html>
